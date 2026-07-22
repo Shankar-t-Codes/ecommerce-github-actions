@@ -1,0 +1,8 @@
+name: Hello world # workflow name
+on: [push] #Event. you can mention any branch like main, new-feature, hot-fix
+jobs: # it can contain multiple jobs
+  hello: # job name
+    runs-on: ubuntu-latest # where to run
+    steps:
+      - name: Print Hello World
+        run: echo "Hello, World"
