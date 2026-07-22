@@ -8,6 +8,7 @@ jobs:
         run: echo "Hello, World 1"
 
   jobs-2: 
+    needs: jobs-1 # this will run after the jobs-1 completions
     runs-on: ubuntu-latest # where to run
     steps:
       - name: Print Hello World 2
