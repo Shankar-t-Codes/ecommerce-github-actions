@@ -11,6 +11,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         run: echo "deploy to PROD"
 
+      # this part will skip. it's not main branch
       - name: trigger DEV deploy
         if: github.ref == 'refs/heads/feature-*'
         run: echo "deploy to DEV"
