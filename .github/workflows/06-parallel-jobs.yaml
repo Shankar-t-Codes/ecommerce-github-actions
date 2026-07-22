@@ -1,0 +1,26 @@
+name: Hello world 
+on: [push] 
+jobs: 
+  jobs-1: 
+    runs-on: ubuntu-latest # where to run
+    steps:
+      - name: Print Hello World
+        run: echo "Hello, World 1"
+
+  jobs-2: 
+    runs-on: ubuntu-latest # where to run
+    steps:
+      - name: Print Hello World
+        run: echo "Hello, World 3"
+
+  jobs-3: 
+    runs-on: ubuntu-latest # where to run
+    steps:
+      - name: Print Hello World
+        run: echo "Hello, World 3"
+
+  jobs-4: 
+    runs-on: ubuntu-latest # where to run
+    steps:
+      - name: Print Hello World
+        run: echo "Hello, World 4"
