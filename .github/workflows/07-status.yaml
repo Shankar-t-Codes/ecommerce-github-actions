@@ -1,0 +1,39 @@
+name: status checking
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ----
+      # Main job steps
+      # ----
+      - name: Checkout
+        run: echo "Cloning repo..."
+
+      - name: Run build
+        run: |
+          echo "Running build..."
+          exit 1 
+        # simulate failure
+
+      # ------
+      # POST SECTION (jenkins style)
+      # ------
+
+      - name: Post-Success
+        if: ${{ success() }}
+        run: echo "Job SUCCESS - run success tasks here"
+
+      - name: POST-Failure
+        if: ${{ failure() }}
+        run: echo "Job FAILURE - run failure task here"
+
+      - name: Cancelled
+        if: ${{ cancelled() }}
+        run: echo "Job CANCELLED - run cancel handlers here"
+
+      - name: Post - Always
+        if: ${{ always() }}
+        run: echo "ALWAYS - this runs no matter what (cleanup)"
